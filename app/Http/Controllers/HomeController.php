@@ -54,4 +54,26 @@ class HomeController extends Controller
 
         return redirect() -> route('postcards.view');
     }
+
+    public function edit($id){
+        $postcard = Postcard::FindOrFail($id);
+        return view('pages.postcardEdit',compact('postcard'));
+    }
+
+    public function update(Request $request){
+        $data = $request -> validate([
+            'sender' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'text' => 'required|string',
+            'image' => 'required|image'
+        ]);
+        $imageFile = $data['image'];
+        $imageName = rand(100000,999999) ."_". time() .".". $imageFile ->getClientOriginalExtension();
+        $imageFile -> storeAs('/postcards',$imageName,'public');
+        $data['image'] = $imageName;
+
+        $postcard = Postcard::create($data);
+
+        return redirect() -> route('postcards.view');
+    }
 }

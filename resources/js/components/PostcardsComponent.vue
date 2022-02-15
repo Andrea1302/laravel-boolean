@@ -19,6 +19,9 @@
                  <a :href="`/delete/postcard/${postcard.id}`" class="btn">
                     Delete
                 </a>
+                <a :href="`edit/postcard/${postcard.id}`" class="btn">
+                    Edit
+                </a>
             </div>
 
         </div>

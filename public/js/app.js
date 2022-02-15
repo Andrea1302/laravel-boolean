@@ -1968,6 +1968,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37665,6 +37668,15 @@ var render = function () {
                 attrs: { href: "/delete/postcard/" + postcard.id },
               },
               [_vm._v("\n                Delete\n            ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "btn",
+                attrs: { href: "edit/postcard/" + postcard.id },
+              },
+              [_vm._v("\n                Edit\n            ")]
             ),
           ]),
         ])

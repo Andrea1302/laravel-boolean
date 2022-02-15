@@ -28,7 +28,10 @@ Route::post('/store', 'HomeController@store')->name('store');
 
 // delete postcard
 Route::get('/delete/postcard/{id}','HomeController@delete')-> name('delete');
-
+// Edit
+route::get('edit/postcard/{id}','HomeController@edit')->name('edit');
+// update
+Route::post('/update/postcard', 'HomeController@update')->name('update.postcard');
 
 // auth
 
