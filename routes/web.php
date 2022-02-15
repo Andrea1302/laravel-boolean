@@ -13,10 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'GuestController@guest')->name('guest');
+Route::get('/postcards', 'HomeController@home')->name('postcards.view');
+Route::get('/create/postcard', 'HomeController@create')->name('create');
+
+Route::post('/store', 'HomeController@store')->name('store');
+
+
+
+
+// auth
+
+Route::post('/register', 'Auth\RegisterController@register') -> name('register');
+Route::post('/login', 'Auth\LoginController@login') -> name('login');
+Route::get('/logout', 'Auth\LoginController@logout') -> name('logout');
+
+// api 
+route::get('api/getPostcards','ApiController@getPostcards')->name('api.getPostcards');
+
