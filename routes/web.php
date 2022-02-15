@@ -26,7 +26,8 @@ Route::get('/create/postcard', 'HomeController@create')->name('create');
 
 Route::post('/store', 'HomeController@store')->name('store');
 
-
+// delete postcard
+Route::get('/delete/postcard/{id}','HomeController@delete')-> name('delete');
 
 
 // auth

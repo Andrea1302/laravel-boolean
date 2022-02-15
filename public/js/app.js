@@ -1958,6 +1958,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37635,14 +37645,27 @@ var render = function () {
             _vm._v(_vm._s(postcard.text)),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-3 itemCol" }, [
-            _c("img", {
-              staticClass: "image_postcard",
-              attrs: {
-                src: "/storage/postcards/" + postcard.image,
-                alt: "" + postcard.image,
+          _c("div", { staticClass: "col-2 itemCol" }, [
+            postcard.image
+              ? _c("img", {
+                  staticClass: "image_postcard",
+                  attrs: {
+                    src: "/storage/postcards/" + postcard.image,
+                    alt: "" + postcard.image,
+                  },
+                })
+              : _c("span", [_vm._v("Null")]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-1 itemCol" }, [
+            _c(
+              "a",
+              {
+                staticClass: "btn",
+                attrs: { href: "/delete/postcard/" + postcard.id },
               },
-            }),
+              [_vm._v("\n                Delete\n            ")]
+            ),
           ]),
         ])
       }),
@@ -37662,7 +37685,9 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "col-3" }, [_vm._v("text")]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-3" }, [_vm._v("image")]),
+      _c("div", { staticClass: "col-2" }, [_vm._v("image")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-1" }, [_vm._v("Action")]),
     ])
   },
 ]

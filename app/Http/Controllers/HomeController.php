@@ -48,5 +48,10 @@ class HomeController extends Controller
 
         return redirect() -> route('postcards.view');
     }
-    
+    public function delete($id){
+        $postcard = Postcard::FindOrFail($id);
+        $postcard -> delete();
+
+        return redirect() -> route('postcards.view');
+    }
 }
